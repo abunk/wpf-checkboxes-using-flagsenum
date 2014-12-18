@@ -11,7 +11,7 @@ namespace WpfCheckboxesUsingFlagsEnum
         {
             InitializeComponent();
 
-            DataContext = new MainWIndowViewModel();
+            DataContext = new MainWindowViewModel();
         }
     }
 }

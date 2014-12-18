@@ -4,11 +4,11 @@ using WpfCheckboxesUsingFlagsEnum.Common;
 
 namespace WpfCheckboxesUsingFlagsEnum.ViewModels
 {
-    public class MainWIndowViewModel : BindableBase
+    public class MainWindowViewModel : BindableBase
     {
         private int _optionValue;
 
-        public MainWIndowViewModel()
+        public MainWindowViewModel()
         {
             OptionValue = (int)Option.All;
         }
