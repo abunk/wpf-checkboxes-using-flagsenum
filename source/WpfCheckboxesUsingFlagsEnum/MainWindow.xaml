@@ -1,0 +1,62 @@
+﻿<Window
+    x:Class="WpfCheckboxesUsingFlagsEnum.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Common="clr-namespace:WpfCheckboxesUsingFlagsEnum.Common"
+    xmlns:Converters="clr-namespace:WpfCheckboxesUsingFlagsEnum.Converters"
+    Title="MainWindow"
+    Width="525"
+    Height="350">
+
+    <Window.Resources>
+        <Style TargetType="{x:Type CheckBox}">
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+        <Converters:OptionsToInt32Converter x:Key="OptionsToInt32Converter" />
+    </Window.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <CheckBox
+            Grid.Row="0"
+            Grid.Column="0"
+            Content="Option 1"
+            IsChecked="{Binding Path=OptionValue, Mode=TwoWay, Converter={StaticResource OptionsToInt32Converter}, ConverterParameter={x:Static Common:Option.Option1}}" />
+        <CheckBox
+            Grid.Row="0"
+            Grid.Column="1"
+            Content="Option 2"
+            IsChecked="{Binding Path=OptionValue, Mode=TwoWay, Converter={StaticResource OptionsToInt32Converter}, ConverterParameter={x:Static Common:Option.Option2}}" />
+        <CheckBox
+            Grid.Row="0"
+            Grid.Column="2"
+            Content="Option 3"
+            IsChecked="{Binding Path=OptionValue, Mode=TwoWay, Converter={StaticResource OptionsToInt32Converter}, ConverterParameter={x:Static Common:Option.Option3}}" />
+        <CheckBox
+            Grid.Row="0"
+            Grid.Column="3"
+            Content="Option 4"
+            IsChecked="{Binding Path=OptionValue, Mode=TwoWay, Converter={StaticResource OptionsToInt32Converter}, ConverterParameter={x:Static Common:Option.Option4}}" />
+
+        <TextBlock
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="4"
+            Margin="20,0,0,0"
+            FontFamily="Segoe UI"
+            FontSize="18"
+            Text="{Binding OptionValue, Mode=OneWay}" />
+    </Grid>
+</Window>
